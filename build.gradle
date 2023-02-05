@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework:spring-jdbc:5.3.3'
+    implementation 'org.springframework:spring-context:5.3.3'
+    implementation 'commons-dbcp:commons-dbcp:1.4'
+    implementation 'org.postgresql:postgresql:42.2.18'
+
+    testCompileOnly('org.springframework:spring-test:5.3.3')
+    testCompileOnly('org.assertj:assertj-core:3.19.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
