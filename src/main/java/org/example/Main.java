@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.account.manager.AccountDao;
 import org.example.account.manager.config.ApplicationConfiguration;
+import org.example.contact.manager.Contact;
 import org.example.contact.manager.ContactDao;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -11,7 +12,7 @@ public class Main {
 
         var accountDao = applicationContext.getBean(AccountDao.class);
 
-        /*var account = accountDao.getAccount(1000L);
+        var account = accountDao.getAccount(1000L);
 
         System.out.println(account);
 
@@ -20,12 +21,14 @@ public class Main {
         System.out.println(account);
 
         var newAccount = accountDao.addAccount(10L,10000L);
-        System.out.println(newAccount);*/
+        System.out.println(newAccount);
 
         var accounts = accountDao.getAllAccounts();
         System.out.println(accounts);
 
         var contactDao = applicationContext.getBean(ContactDao.class);
+        var newContact = new Contact("Jon", "Dow", "Jond@outlook.co", "+1(555) 555-55-55");
+        contactDao.addContact(newContact);
         var contacts = contactDao.getAllContacts();
         System.out.println(contacts);
     }
