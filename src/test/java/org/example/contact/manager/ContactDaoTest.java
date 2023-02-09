@@ -1,6 +1,6 @@
 package org.example.contact.manager;
 
-import org.example.account.manager.config.ContactConfiguration;
+import org.example.contact.manager.config.ContactConfiguration;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

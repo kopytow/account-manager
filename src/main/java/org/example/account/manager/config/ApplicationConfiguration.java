@@ -4,6 +4,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("org.example.account.manager")
+@ComponentScan("org.example")
 public class ApplicationConfiguration {
 }

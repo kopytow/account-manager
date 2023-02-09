@@ -4,9 +4,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class JdbcAccountDao implements AccountDao{
     private static final String GET_ACCOUNT_SQL = "" +
             "SELECT" +
