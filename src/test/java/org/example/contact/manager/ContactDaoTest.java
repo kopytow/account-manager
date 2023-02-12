@@ -1,6 +1,7 @@
 package org.example.contact.manager;
 
 import org.example.contact.manager.config.ContactConfiguration;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,13 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = ContactConfiguration.class)
 @Sql("classpath:contact.sql")
-public record ContactDaoTest(@Autowired ContactDao contactDao) {
+public record ContactDaoTest() {
+    private static ContactDao contactDao;
+
+    @BeforeAll
+    public static void init(@Autowired ContactDao cd) {
+        contactDao = cd;
+    }
 
     private static final Contact FEDOSIY = new Contact(
             1000L, "Федосий", "Брежнев", "FedosiyBrezhnev@gmail.com", "+7 (977) 677-95-44"

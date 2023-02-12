@@ -12,23 +12,23 @@ repositories {
 }
 
 dependencies {
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-spring-boot-dependencies
+    compileOnly 'org.apache.camel:camel-spring-boot-dependencies:3.0.0-M4'
+
     // https://mvnrepository.com/artifact/org.springframework/spring-jdbc
-    implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.3.3'
+    implementation 'org.springframework:spring-jdbc:6.0.3'
     // https://mvnrepository.com/artifact/org.springframework/spring-context
-    implementation group: 'org.springframework', name: 'spring-context', version: '5.3.3'
+    implementation 'org.springframework:spring-context:6.0.3'
 
     // https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp
-    implementation group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+    implementation 'commons-dbcp:commons-dbcp:1.4'
     // https://mvnrepository.com/artifact/org.postgresql/postgresql
-    implementation group: 'org.postgresql', name: 'postgresql', version: '42.5.3'
+    implementation 'org.postgresql:postgresql:42.5.3'
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
-    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '3.0.2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.1'
 
-    // https://mvnrepository.com/artifact/org.springframework/spring-test
-    testImplementation group: 'org.springframework', name: 'spring-test', version: '6.0.4'
-
-    //1testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
 
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
 }

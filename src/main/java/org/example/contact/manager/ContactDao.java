@@ -72,7 +72,7 @@ public class ContactDao {
 
     public void updatePhoneNumber(long contactId, String phoneNumber) {
         namedJdbcTemplate.update(
-                "UPDATE CONTACT SET PHONE = :phone WHERE ID = :id",
+                "UPDATE CONTACT SET PHONE_NUMBER = :phone WHERE ID = :id",
                 new MapSqlParameterSource()
                         .addValue("id", contactId)
                         .addValue("phone", phoneNumber)
