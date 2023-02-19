@@ -94,4 +94,19 @@ public class ContactDao {
                 new MapSqlParameterSource("id", contactId)
         );
     }
+
+    public void saveAll(List<Contact> contacts) {
+        var args = contacts.stream()
+                .map(contact -> new MapSqlParameterSource()
+                        .addValue("id", contact.getId())
+                        .addValue("name", contact.getName())
+                        .addValue("surname", contact.getSurname())
+                        .addValue("email", contact.getEmail())
+                        .addValue("phone", contact.getPhone()))
+                .toArray(MapSqlParameterSource[]::new);
+        namedJdbcTemplate.batchUpdate(
+                CREATE_CONTACT_SQL,
+                args
+        );
+    }
 }

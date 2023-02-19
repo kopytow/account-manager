@@ -19,6 +19,8 @@ dependencies {
     implementation 'org.springframework:spring-jdbc:6.0.3'
     // https://mvnrepository.com/artifact/org.springframework/spring-context
     implementation 'org.springframework:spring-context:6.0.3'
+    // https://mvnrepository.com/artifact/org.springframework/spring-core
+    implementation 'org.springframework:spring-core:6.0.5'
 
     // https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp
     implementation 'commons-dbcp:commons-dbcp:1.4'

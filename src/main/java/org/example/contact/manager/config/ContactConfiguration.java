@@ -2,7 +2,9 @@ package org.example.contact.manager.config;
 
 import org.example.common.JdbcConfig;
 import org.example.common.PropertiesConfiguration;
+import org.example.contact.manager.ContactCSVReader;
 import org.example.contact.manager.ContactDao;
+import org.example.contact.manager.ContactService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -22,5 +24,18 @@ public class ContactConfiguration {
     @Bean
     public ContactDao contactDao() {
         return new ContactDao(namedParameterJdbcTemplate);
+    }
+
+    @Bean
+    public ContactCSVReader contactParser() {
+        return new ContactCSVReader();
+    }
+
+    @Bean
+    public ContactService contactService() {
+        return new ContactService(
+                contactDao(),
+                contactParser()
+        );
     }
 }
